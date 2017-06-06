@@ -8,4 +8,9 @@
         <div id="main-title">{{trans('app.main_title')}}</div>
         <div id="banner-text">{{trans('app.banner-text')}}</div>
     </div>
+    <div id="about">
+        <div><img style="width: 200px;" src="{{$about['cover_images']['path']}}"></div>
+        <h1>{{$about['translation']['title']}}</h1>
+        <p>{{$about['translation']['description_long']}}</p>
+    </div>
 @endsection

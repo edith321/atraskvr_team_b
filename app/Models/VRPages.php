@@ -25,6 +25,18 @@ class VRPages extends CoreModel
 
     }
 
+    /**
+     * Returns one translation info
+     * according to locale language
+     * @return mixed
+     *
+     */
+    public function translation()
+    {
+        return $this->hasOne(VRPagesTranslations::class, 'page_id', 'id')->where('language_id', app()->getLocale());
+
+    }
+
     public function translations()
     {
         return $this->belongsToMany(VRlanguages::class, 'vr_pages_translations', 'page_id', 'language_id' )->withPivot('title', 'description_short', 'description_long', 'slug');
