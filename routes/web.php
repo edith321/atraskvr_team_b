@@ -107,4 +107,4 @@ Route::group(['prefix' => 'user', 'middleware' => ['auth', 'notUserRestriction']
     });
 });
 
-Route::get('/{lang}', ['uses' => 'VRFrontEndController@displayMenu']);
+Route::get('/{lang?}', ['middleware' => ['LanguageRestriction'], 'uses' => 'VRFrontEndController@displayMenu']);

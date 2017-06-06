@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\LanguageRestriction;
 use App\Http\Middleware\notAdminrestriction;
 use App\Http\Middleware\notUserRestriction;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -60,5 +61,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'notUserRestriction' => notUserRestriction::class,
         'notAdminRestriction' => notAdminrestriction::class,
+        'LanguageRestriction' => LanguageRestriction::class,
     ];
 }
